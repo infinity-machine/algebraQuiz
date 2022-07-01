@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+#countdown {
+    color: white;
+    background-color: red;
+}
+
+h1{
+    color: white;
+  }
+
+h2 {
+    color: white;
+}
+h3 {
+    color: white;
+}
+h4 {
+    color: white;
+}
+
+p {
+    color: white;
+  }
+
+input {
+    color: white;
+}
+
+#quiz {
+    visibility: hidden;
+}
+form {
+    color: white;
+}
+
+button {
+    color: white;
+    background-color: red;
+}
+
+#subBtn {
+}
+
+body {
+    background-color: black;
+  } 
