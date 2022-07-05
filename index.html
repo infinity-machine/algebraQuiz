@@ -8,7 +8,7 @@
     <title>QUIZ!</title>
 </head>
 <body>
-    <p id="timeH">00:00</p>
+    <p id="time">00:00</p>
     <div id="begin">
         <h1>ALGEBRA QUIZ</h1>
         <h2>THIS QUIZ WILL TEST YOUR ABILITY TO SOLVE SIMPLE ALGEBRA PROBLEMS QUICKLY</h2>
@@ -17,20 +17,18 @@
         
     </div>
     <div id="quiz">
-        <h3 id="qLine">2x + 5 = 15</h3>
-        <form>
-            <input class="radio" id="a1Radio" type="radio" name="answer">
-            <label id="a1Line" for="answer1">x = 3</label>
-            <input class="radio" id="a2Radio" type="radio" name="answer">
-            <label id="a2Line" for="answer2">x = 9</label>
-            <input class="radio" id="a3Radio" type="radio" name="answer">
-            <label id="a3Line" for="answer3">x = 5</label>
-            <input class="radio" id="a4Radio" type="radio" name="answer">
-            <label id="a4Line" for="answer4">x = 4</label>
-            <button id="subBtn">submit</button>
-        </form>
+        <h3 id="question"></h3>
+        <button id="choice1" data-index="0"></button>
+        <button id="choice2" data-index="1"></button>
+        <button id="choice3" data-index="2"></button>
+        <button id="choice4" data-index="3"></button> 
     </div>
-    <script src="assets/script.js"></script>
+    <div id="end">
+        <h3 id="score">HIGH SCORES</h3>
+        <ol id="highScores">
+        </ol>
+    </div>
+    <script src="assets/script2.js"></script>
     
 </body>
 </html>

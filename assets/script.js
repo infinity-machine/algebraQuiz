@@ -42,7 +42,6 @@ var a2RadioEl = document.getElementById('a2Radio');
 var a3RadioEl = document.getElementById('a3Radio');
 var a4RadioEl = document.getElementById('a4Radio');
 var userScore = 0;
-console.log(a1RadioEl.checked)
 
 timeH = document.getElementById('timeH');
 var timeSecond = 60;
@@ -52,15 +51,8 @@ subBtn.addEventListener('click', function(event) {
     event.preventDefault();
 })
 
-
-
 beginBtn.addEventListener('click', function beginQuiz(){
-    var beginEl = document.getElementById('begin');
-    beginEl.remove();
-    document.getElementById('quiz').style.visibility = "visible"
-})
-    
-var countDown = setInterval(function beginTime() {
+    var countDown = setInterval(function beginTime() {
     timeSecond --;
     timeH.innerHTML = `00:${timeSecond}`;
     if (timeSecond === 0) {
@@ -68,71 +60,92 @@ var countDown = setInterval(function beginTime() {
             alert('OUT OF TIME!')
         }
     }, 1000)
+    var beginEl = document.getElementById('begin');
+    beginEl.remove();
+    document.getElementById('quiz').style.visibility = "visible"
+})
 
-    subBtn.addEventListener('click', function question2(){
-        qLineEl = document.getElementById('qLine');
-        qLineEl.innerHTML = q2;
-        a1LineEl.innerHTML = a2[0]
-        a2LineEl.innerHTML = a2[1]
-        a3LineEl.innerHTML = a2[2]
-        a4LineEl.innerHTML = a2[3]
-        subBtn.addEventListener('click', function question3(){
+subBtn.addEventListener('click', function question2(){
+    qLineEl = document.getElementById('qLine');
+    qLineEl.innerHTML = q2;
+    a1LineEl.innerHTML = a2[0]
+    a2LineEl.innerHTML = a2[1]
+    a3LineEl.innerHTML = a2[2]
+     a4LineEl.innerHTML = a2[3]
+     if (a3RadioEl.checked) userScore++;
+     console.log(userScore)
+    subBtn.addEventListener('click', function question3(){
+        qLineEl = document.getElementById('qLine')
+        qLineEl.innerHTML = q3
+        a1LineEl.innerHTML = a3[0]
+        a2LineEl.innerHTML = a3[1]
+        a3LineEl.innerHTML = a3[2]
+        a4LineEl.innerHTML = a3[3]
+        if (a4RadioEl.checked) userScore++;
+        console.log(userScore)
+        subBtn.addEventListener('click', function question4(){
             qLineEl = document.getElementById('qLine')
-            qLineEl.innerHTML = q3
-            a1LineEl.innerHTML = a3[0]
-            a2LineEl.innerHTML = a3[1]
-            a3LineEl.innerHTML = a3[2]
-            a4LineEl.innerHTML = a3[3]
-            subBtn.addEventListener('click', function question4(){
+            qLineEl.innerHTML = q4
+            a1LineEl.innerHTML = a4[0]
+            a2LineEl.innerHTML = a4[1]
+            a3LineEl.innerHTML = a4[2]
+            a4LineEl.innerHTML = a4[3]
+            if (a2RadioEl.checked) userScore++;
+            console.log(userScore)
+            subBtn.addEventListener('click', function question5(){
                 qLineEl = document.getElementById('qLine')
-                qLineEl.innerHTML = q4
-                a1LineEl.innerHTML = a4[0]
-                a2LineEl.innerHTML = a4[1]
-                a3LineEl.innerHTML = a4[2]
-                a4LineEl.innerHTML = a4[3]
-                subBtn.addEventListener('click', function question5(){
+                qLineEl.innerHTML = q5
+                a1LineEl.innerHTML = a5[0]
+                a2LineEl.innerHTML = a5[1]
+                a3LineEl.innerHTML = a5[2]
+                a4LineEl.innerHTML = a5[3]
+                if (a4RadioEl.checked) userScore++;
+                console.log(userScore)
+                subBtn.addEventListener('click', function question6(){
                     qLineEl = document.getElementById('qLine')
-                    qLineEl.innerHTML = q5
-                    a1LineEl.innerHTML = a5[0]
-                    a2LineEl.innerHTML = a5[1]
-                    a3LineEl.innerHTML = a5[2]
-                    a4LineEl.innerHTML = a5[3]
-                    subBtn.addEventListener('click', function question6(){
+                    qLineEl.innerHTML = q6
+                    a1LineEl.innerHTML = a3[0]
+                    a2LineEl.innerHTML = a6[1]
+                    a3LineEl.innerHTML = a6[2]
+                    a4LineEl.innerHTML = a6[3]
+                    if (a3RadioEl.checked) userScore++;
+                    console.log(userScore)
+                    subBtn.addEventListener('click', function question7(){
                         qLineEl = document.getElementById('qLine')
-                        qLineEl.innerHTML = q6
+                        qLineEl.innerHTML = q7
                         a1LineEl.innerHTML = a3[0]
-                        a2LineEl.innerHTML = a6[1]
-                        a3LineEl.innerHTML = a6[2]
-                        a4LineEl.innerHTML = a6[3]
-                        subBtn.addEventListener('click', function question7(){
-                            qLineEl = document.getElementById('qLine')
-                            qLineEl.innerHTML = q7
-                            a1LineEl.innerHTML = a3[0]
                         a2LineEl.innerHTML = a7[1]
                         a3LineEl.innerHTML = a7[2]
                         a4LineEl.innerHTML = a7[3]
-                            subBtn.addEventListener('click', function question8(){
+                        if (a4RadioEl.checked) userScore++;
+                        console.log(userScore)
+                        subBtn.addEventListener('click', function question8(){
+                            qLineEl = document.getElementById('qLine')
+                            qLineEl.innerHTML = q8
+                            a1LineEl.innerHTML = a8[0]
+                            a2LineEl.innerHTML = a8[1]
+                            a3LineEl.innerHTML = a8[2]
+                            a4LineEl.innerHTML = a8[3]
+                            if (a2RadioEl.checked) userScore++;
+                            console.log(userScore)
+                            subBtn.addEventListener('click', function question9(){
                                 qLineEl = document.getElementById('qLine')
-                                qLineEl.innerHTML = q8
-                                a1LineEl.innerHTML = a8[0]
-                                a2LineEl.innerHTML = a8[1]
-                                a3LineEl.innerHTML = a8[2]
-                                a4LineEl.innerHTML = a8[3]
-                                subBtn.addEventListener('click', function question9(){
+                                qLineEl.innerHTML = q9
+                                a1LineEl.innerHTML = a9[0]
+                                a2LineEl.innerHTML = a9[1]
+                                a3LineEl.innerHTML = a9[2]
+                                 a4LineEl.innerHTML = a9[3]
+                                 if (a1RadioEl.checked) userScore++;
+                                console.log(userScore)
+                                subBtn.addEventListener('click', function question10(){
                                     qLineEl = document.getElementById('qLine')
-                                    qLineEl.innerHTML = q9
-                                    a1LineEl.innerHTML = a9[0]
-                                    a2LineEl.innerHTML = a9[1]
-                                    a3LineEl.innerHTML = a9[2]
-                                    a4LineEl.innerHTML = a9[3]
-                                    subBtn.addEventListener('click', function question10(){
-                                        qLineEl = document.getElementById('qLine')
-                                        qLineEl.innerHTML = q10
-                                        a1LineEl.innerHTML = a10[0]
-                                        a2LineEl.innerHTML = a10[1]
-                                        a3LineEl.innerHTML = a10[2]
-                                        a4LineEl.innerHTML = a10[3]
-                                        
+                                    qLineEl.innerHTML = q10
+                                    a1LineEl.innerHTML = a10[0]
+                                    a2LineEl.innerHTML = a10[1]
+                                    a3LineEl.innerHTML = a10[2]
+                                    a4LineEl.innerHTML = a10[3]   
+                                    if (a4RadioEl.checked) userScore++;
+                                    console.log(userScore)
                                     })
                                 })
                             })
