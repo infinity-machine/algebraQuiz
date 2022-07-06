@@ -8,13 +8,12 @@
     <title>QUIZ!</title>
 </head>
 <body>
-    <p id="time">00:00</p>
-    <div id="begin">
+    <p id="timerP">00:<span id="timerSpan"></span></p>
+    <div id="start">
         <h1>ALGEBRA QUIZ</h1>
         <h2>THIS QUIZ WILL TEST YOUR ABILITY TO SOLVE SIMPLE ALGEBRA PROBLEMS QUICKLY</h2>
         <p>COMPLETE EACH PROBLEM AS FAST AS YOU CAN AND HIT SUBMIT TO MOVE TO THE NEXT ONE</p>
-        <button id="beginBtn">BEGIN</button>
-        
+        <button id="beginBtn">BEGIN</button>  
     </div>
     <div id="quiz">
         <h3 id="question"></h3>
@@ -24,11 +23,10 @@
         <button id="choice4" data-index="3"></button> 
     </div>
     <div id="end">
-        <h3 id="score">HIGH SCORES</h3>
+        <h3 id="score"></h3>
         <ol id="highScores">
         </ol>
     </div>
     <script src="assets/script2.js"></script>
-    
 </body>
 </html>

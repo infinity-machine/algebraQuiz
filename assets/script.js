@@ -25,7 +25,7 @@ var q2 = '3x -4 = 5'
     q10 = '5(x + 9) = 7x'
     a10 = ['x = 8', 'x = 4', 'x = 7', 'x = 6']
 
-
+    
 var qLineEl = document.getElementById('qLine');
 var a1LineEl = document.getElementById('a1Line');
 var a2LineEl = document.getElementById('a2Line');
