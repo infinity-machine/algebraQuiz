@@ -10,9 +10,11 @@
 <body>
     <p id="timerP">00:<span id="timerSpan"></span></p>
     <div id="start">
-        <h1>ALGEBRA QUIZ</h1>
+        <h1 id = "algebra">ALGEBRA QUIZ</h1>
         <h2>THIS QUIZ WILL TEST YOUR ABILITY TO SOLVE SIMPLE ALGEBRA PROBLEMS QUICKLY</h2>
-        <p>COMPLETE EACH PROBLEM AS FAST AS YOU CAN AND HIT SUBMIT TO MOVE TO THE NEXT ONE</p>
+        <p>COMPLETE EACH PROBLEM AS FAST AS YOU CAN AND HIT SUBMIT TO MOVE TO THE NEXT ONE!
+            WRONG ANSWERS WILL LOSE YOU THREE SECONDS!
+        </p>
         <button id="beginBtn">BEGIN</button>  
     </div>
     <div id="quiz">
@@ -23,10 +25,12 @@
         <button id="choice4" data-index="3"></button> 
     </div>
     <div id="end">
-        <h3 id="score"></h3>
-        <ol id="highScores">
+        <h3 id="scoreH3"></h3>
+        <ol id="scoresList">
         </ol>
+        <div id="btnDiv"></div>
     </div>
+    
     <script src="assets/script2.js"></script>
 </body>
 </html>

@@ -56,7 +56,7 @@ var timeSecond = 60;
 var userScore = 0;
 
 // DOCUMENT
-var timerP = document.getElementById('timerP')
+var timerP = document.getElementById('timerP');
 var timerSpan = document.getElementById('timerSpan');
 var start = document.getElementById('start');
 var beginBtn = document.getElementById('beginBtn');
@@ -66,7 +66,9 @@ var choice1 = document.getElementById('choice1');
 var choice2 = document.getElementById('choice2');
 var choice3 = document.getElementById('choice3');
 var choice4 = document.getElementById('choice4');
-var done = document.getElementById('done');
+var scoreH3 = document.getElementById('scoreH3');
+var scoresList = document.getElementById('scoresList');
+var btnDiv = document.getElementById('btnDiv');
 
 // START QUIZ
 timerSpan.innerText = '00';
@@ -87,15 +89,15 @@ function startTimer() {
         timeSecond--;
         timerSpan.innerText = timeSecond;
         if (timeSecond < 30) {
-            timerP.style.color = 'red'
-            timerSpan.style.color = 'red'
+            timerP.style.color = 'red';
+            timerSpan.style.color = 'red';
         }
         if (timeSecond < 10) {
             timerSpan.innerText = `0${timeSecond}`;
         }
         if (timeSecond === 0) {
             clearInterval(countDown);
-            alert('OUT OF TIME!')
+            alert('OUT OF TIME!');
             endQuiz();
         }
     }, 1000)
@@ -105,41 +107,46 @@ function startTimer() {
 // DISPLAY QUESTIONS
 function displayQuestion() {
     question.innerText = qA[QAIndex].question;
-    choice1.innerText = qA[QAIndex].choices[0]
-    choice2.innerText = qA[QAIndex].choices[1]
-    choice3.innerText = qA[QAIndex].choices[2]
-    choice4.innerText = qA[QAIndex].choices[3]
+    choice1.innerText = qA[QAIndex].choices[0];
+    choice2.innerText = qA[QAIndex].choices[1];
+    choice3.innerText = qA[QAIndex].choices[2];
+    choice4.innerText = qA[QAIndex].choices[3];
 }
 // CHECK ANSWERS, TEE UP REMAINING QUESTIONS, END QUIZ WHEN COMPLETE
 function checkAnswer(event) {
-    console.log(event.target.dataset.index)
     if (qA[QAIndex].answer == event.target.dataset.index) { 
-        userScore++
-        console.log('CORRECT!')
+        userScore++;
     } else {
-        console.log('wrong')
+        timeSecond = timeSecond - 3;
     }
     QAIndex++;
-    if (QAIndex >= qA.length) {endQuiz();} 
-    else {displayQuestion();}
+    if (QAIndex >= qA.length) {
+        endQuiz();
+    } 
+    else {
+        displayQuestion();
+    }
 }
-//END OF QUIZ
+// END OF QUIZ
 function endQuiz() {
     userName = prompt('enter your name!');
     localStorage.setItem(userName, userScore);
     timerP.remove();
     timerSpan.remove();
     quiz.remove();
-    var highScores = document.getElementById('highScores');
-        highScores.innerText = 'HIGH SCORES!'
+    refreshBtn = document.createElement('button')
+    refreshBtn.innerText = 'PLAY AGAIN'
+    btnDiv.appendChild(refreshBtn)
+    refreshBtn.addEventListener('click', function playAgain(){
+        location.reload();
+    })
+    scoreH3.innerText = 'HIGH SCORES!'
     for (i = 0; i < localStorage.length; i++) {
         listedScore = document.createElement('li')
         listedScore.innerText = `${localStorage.key(i)} - ${localStorage.getItem(localStorage.key(i))}`
-        document.getElementById('highScores').appendChild(listedScore)
+        document.getElementById('scoresList').appendChild(listedScore)
     }
 }
-
-
 
 
 
